@@ -58,5 +58,5 @@ export class CountToDo extends React.Component {
 CountToDo.defaultProps = {
   total: 3,
   completed: 0,
-  goal: 10
+  goal: 3
 }
