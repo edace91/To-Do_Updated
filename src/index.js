@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoItem from './components/TodoItem';
-//import CountToDo from './components/Countodo';
+import TodoItem from './components/TodoItem'; 
+import { CountToDo } from './components/Countodo';
 
 
 
@@ -39,9 +39,11 @@ class App extends React.Component {
         </ol>
         <input value={this.state.todo} onChange={this.handleChange} type="text" />
         <button onClick={this.handleAddTodo}>Add Todo</button>
+        <CountToDo />
       </div>
     );
   }
+
 
 }
 

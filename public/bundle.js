@@ -60,6 +60,8 @@
 
 	var _TodoItem2 = _interopRequireDefault(_TodoItem);
 
+	var _Countodo = __webpack_require__(160);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67,9 +69,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	//import CountToDo from './components/Countodo';
-
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -127,7 +126,7 @@
 	          { onClick: this.handleAddTodo },
 	          'Add Todo'
 	        ),
-	        ','
+	        _react2.default.createElement(_Countodo.CountToDo, null)
 	      );
 	    }
 	  }]);
@@ -19948,6 +19947,128 @@
 	}(_react2.default.Component);
 
 	exports.default = TodoItem;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.CountToDo = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// const percentToDecimal = (decimal) => {
+	// 	return ((decimal * 100) + '%')
+	// }
+
+	// const calcGoalProgress = (total, goal) => {
+	// 	return percentToDecimal(total/goal)
+	// }
+
+	// export default class CountToDo extends React.Component {
+	// 	render() {
+	// 		return (
+	// 			<div className= "count-to-do">
+	// 				<div className= "total-todos">
+	//  					<span>5</span>
+	// 				</div>
+	// 				<div className= "completed-todos">
+	//  					<span>0</span>
+	//  				</div>
+	//  			</div>
+	//  	 	) 	
+	//  	}
+	// }
+	var CountToDo = exports.CountToDo = function (_React$Component) {
+	  _inherits(CountToDo, _React$Component);
+
+	  function CountToDo() {
+	    _classCallCheck(this, CountToDo);
+
+	    return _possibleConstructorReturn(this, (CountToDo.__proto__ || Object.getPrototypeOf(CountToDo)).apply(this, arguments));
+	  }
+
+	  _createClass(CountToDo, [{
+	    key: 'percentToDecimal',
+	    value: function percentToDecimal(decimal) {
+	      return decimal * 100 + '%';
+	    }
+	  }, {
+	    key: 'calcGoalProgress',
+	    value: function calcGoalProgress(total, goal) {
+	      return this.percentToDecimal(total / goal);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'count-to-do' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'total-todos' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            this.props.total
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' : left to do'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'completed-todos' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            this.props.completed
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' : done'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            this.calcGoalProgress(this.props.total, this.props.goal)
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return CountToDo;
+	}(_react2.default.Component);
+
+	CountToDo.defaultProps = {
+	  total: 3,
+	  completed: 0,
+	  goal: 10
+	};
 
 /***/ }
 /******/ ]);
