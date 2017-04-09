@@ -4,7 +4,7 @@ React JS To Do list.
 ## Synopsis
 
 A simple react application that keeps a to do list and added a counter to keep track of things completed.
-Keeps track of the number of tasks left to do and implements a strikethrough when completed. 
+Keeps track of the number of tasks left to do and implements a strike through when completed. 
 
 ## Project Structure
 
